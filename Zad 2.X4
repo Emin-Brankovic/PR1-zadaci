@@ -1,0 +1,51 @@
+int f1(int x, int d);
+bool isIsti(int x, int y);
+
+void main()
+{
+	int n, c1, c2,suma=0;
+	do
+	{
+		cout << "Unesite broj n: ", cin >> n;
+	} while (n < 0 || n>1000);
+	do
+	{
+		cout << "Unesite cifru c: ", cin >> c1;
+	} while (c1 < 0 || c1>9);
+	do
+	{
+		cout << "Unesite cifru c: ", cin >> c2;
+	} while (c2 < 0 || c2>4);
+
+	for(int i=0;i<=n;i++)
+	{
+		suma += isIsti(c2, f1(i, c1));
+	}
+	cout << "Suma je: " << suma << endl;
+
+}
+
+int f1(int x, int d) // Provjera koliko se puta cifra ponavlja u broju
+{
+	if (x < 0 || d < 0)
+			return false;
+	int brojac = 0,  temp = 0;
+	while (x > 0)
+	{
+		temp = x % 10;
+		if (temp == d)
+		{
+			brojac++; // broji koliko se cifra d nalazi u broju x
+		}
+		x = x / 10;
+	}
+	return brojac;
+}
+
+bool isIsti(int x, int y)
+{
+	if (x == y)
+		return true;
+	else
+		return false;
+}
