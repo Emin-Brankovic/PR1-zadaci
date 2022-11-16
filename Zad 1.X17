@@ -1,0 +1,25 @@
+void main()
+{
+	int broj,cifra1,cifra2,rez,rez2;
+	do
+	{
+		cout << "Unesite broj: ";
+		cin >> broj;
+	} while (broj < 10 || broj>99);
+
+	for (int i = 10; i <= broj; i++)
+	{
+		cifra1 = i / 10;
+		cifra2 = i % 10;
+		
+		rez = cifra1 + cifra2;
+		rez2 = cifra1 * cifra2;
+	
+		if (rez < rez2)
+		{
+			cout << i << endl;
+		}
+
+	}
+
+}
