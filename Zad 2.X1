@@ -1,0 +1,50 @@
+bool isProst(int x);
+bool isSadrziCifru(int x, int d);
+void main()
+{
+	int n, d,c=0;
+	do
+	{
+		cout << "Unesite broj n: ", cin >> n;
+	} while (n < 100 || n>1000);
+
+	do
+	{
+		cout << "Unesite cifru d: ", cin >> d;
+
+	} while (d < 0 || d>9);
+	
+	for (int i = 2; i <= n; i++)
+	{
+		c += isProst(i) * isSadrziCifru(i, d);
+	}
+	cout << "Suma je: " << c << endl;
+}
+
+
+
+bool isProst(int x) // Funkcije za provjeru broja jel prost
+{
+	if (x > 2)
+	{
+		for (int i = 2; i <= x / 2; i++)
+		{
+			if (x%i== 0)
+				return false;
+		}
+	}
+	return true;
+}
+
+bool isSadrziCifru(int x, int d) // x uneseni broj, d cifra koja se provjerava
+{
+	int temp = 0;
+	while (x > 0)
+	{
+		temp = x % 10;
+		if (temp==d)
+			return true;
+		x = x / 10;
+	}
+	return false;
+}
