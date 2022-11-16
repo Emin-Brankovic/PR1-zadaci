@@ -1,0 +1,38 @@
+
+bool isDecimale(int x, int y);
+void main()
+{
+	int x, y,c=0;
+	do
+	{
+		cout << "Unesite broj x: ", cin >> x;
+	} while (x < 0 || x>1000);
+	do
+	{
+		cout << "Unesite broj y: ", cin >> y;
+	} while (y < 0 || y>30);
+
+	for (int i = 0; i <= x; i++)
+	{
+		c += isDecimale(i, y);
+	}
+	cout << "Broj je: " << c << endl;
+}
+
+bool isDecimale(int x, int y) // x uneseni broj, d cifra koja se provjerava
+{
+	if (x < 0 || y < 0)
+		return false;
+	int temp = 0,zbir_cifara=0;
+	while (x > 0)
+	{
+		temp = x % 10; // uzima zadnju cifru
+		zbir_cifara += temp; // sabira zadnje cifre
+		x = x / 10; // sklanje nepotrebne cifre
+		if (zbir_cifara == y) {
+			return true;
+			
+		}
+	}
+	return false;
+}
