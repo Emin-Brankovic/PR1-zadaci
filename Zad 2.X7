@@ -1,0 +1,53 @@
+bool s(int x, int y);
+int reverse(int x);
+
+void main()
+{
+	int n, b;
+	do
+	{
+		cout << "Unesite broj n: ", cin >> n;
+	} while (n < 0 || n>1000);
+	do
+	{
+		cout << "Unesite cifru b: ", cin >>b;
+	} while (b < 0);
+
+	for (int i = 0; i <= n; i++)
+	{
+		if (reverse(i) == i && s(i, b)) // ispisuje brojeve koji su palindrom al im zbir cifara = b
+			cout << i << endl;
+	}
+}
+
+int reverse(int x) // obrce cifre broja
+{
+	int temp = 0, obrnuti = 0;
+	while (x>0)
+	{
+		temp = x % 10;
+		obrnuti = obrnuti * 10 + temp;
+		x /= 10;
+	}
+	return obrnuti;
+}
+
+bool s(int x, int y) // sabira cifre broja i provjerava jel jednako y
+{
+	int temp = 0,zbri_cifara=0;
+	if (x < 0 || y < 0)
+		return false;
+
+	while (x>0)
+	{
+		temp = x % 10;
+		zbri_cifara += temp;
+		x = x / 10;
+	}
+	if (zbri_cifara == y) {
+		return true;
+	}
+
+	return false;
+	
+}
