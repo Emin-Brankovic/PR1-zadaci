@@ -1,0 +1,43 @@
+int getDigitnumber(int x);
+float getMiddledigit(int x);
+
+
+void main()
+{
+	int broj;
+	cin >> broj;
+	cout << getMiddledigit(broj);
+}
+
+int getDigitnumber(int x)
+{
+	int brojac = 0;
+	x=abs(x);
+	if (x == 0)
+		return 1;
+
+	while (x > 0)
+	{
+		x /= 10;
+		brojac++;
+	}
+	return brojac;
+}
+
+float getMiddledigit(int x)
+{
+	int pola_broja = getDigitnumber(x) / 2;
+	int srednja;
+	if (getDigitnumber(x) % 2 == 0)
+	{
+		float sljedbenik;
+		sljedbenik = pola_broja + 1;
+		return (pola_broja + sljedbenik) / 2;
+	}
+	
+	
+	else {
+		x /= pow(10, pola_broja);
+		return x % 10;
+	}
+}
