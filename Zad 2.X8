@@ -1,0 +1,54 @@
+int parne = 0;
+int neparne = 0;
+void sortiranje(int a, int b);
+
+void main()
+{
+	int a, b;
+	do
+	{
+		cout << "Unesite a: ", cin >> a;
+	} while (a < 0 || a>10000);
+	do
+	{
+		cout << "Unesite b: ", cin >> b;
+
+	} while (b < 0 || b>10000);
+	sortiranje(a, b);
+	cout << "Sve parne cifre su: " << parne << endl;
+	cout << "Sve neparne cifreu su: " << neparne << endl;
+
+}
+
+void sortiranje(int a, int b)
+{
+	while (a > 0)
+	{
+		int temp;
+		temp = a % 10; // uzima zadnju cifru broja a
+		if (temp % 2 == 0) // provjerava jel cifra parna 
+		{
+			parne = parne * 10 + temp; // upisuju se u varijablu paran
+		}
+		else
+		{
+			neparne = neparne * 10 + temp; // upisuje neparne cifre u varijablu neparan
+		}
+		a /= 10;
+	}	
+	while (b > 0)
+	{
+		int temp;
+		temp = b % 10;
+		if (temp % 2 == 0)
+		{
+			parne = parne * 10 + temp;
+		}
+		else
+		{
+			neparne = neparne * 10 + temp;
+		}
+		b /= 10;
+	}
+	
+}
