@@ -1,0 +1,128 @@
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+bool isCifreJednake(int x);
+
+bool isSuma(int x, int y);
+
+
+void main()
+{
+	int n,x;
+	do
+	{
+		cout << "Unesite broj n: ", cin >> n;
+	} while (n<0);	
+	do
+	{
+		cout << "Unesite broj x: ", cin >> x;
+	} while (x < 0);
+	
+	for (int i = 1; i <= n; i++)
+	{
+		
+		if (isCifreJednake(i) && isSuma(i,x))
+			cout << i << " ";
+	}
+}
+
+bool isCifreJednake(int x)
+{
+	if (x % 2 != 0) {
+		return false;
+	}
+	else
+	{
+		int cifre = x % 10;
+
+		while (x > 0)
+		{
+			if (x % 10 != cifre)
+				return false;
+			x /= 10;
+		}
+
+		return true;
+	}
+}
+
+
+bool isSuma(int x, int y)
+{
+		int suma = 0;
+	while (x>0)
+	{
+		suma += x % 10;
+		x /= 10;
+	}
+	if (suma < y) 
+	{
+		return false;
+	}
+	return true;
+}
+
+ILI 
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+bool isCifreJednake(int x);
+
+int isSuma(int x, int y);
+
+
+void main()
+{
+	int n,x;
+	do
+	{
+		cout << "Unesite broj n: ", cin >> n;
+	} while (n<0);	
+	do
+	{
+		cout << "Unesite broj x: ", cin >> x;
+	} while (x < 0);
+	
+	for (int i = 1; i <= n; i++)
+	{
+		
+		if (isCifreJednake(i) && isSuma(i,x))
+			cout << i << " ";
+	}
+}
+
+bool isCifreJednake(int x)
+{
+	if (x % 2 != 0) {
+		return false;
+	}
+	else
+	{
+		int cifre = x % 10;
+
+		while (x > 0)
+		{
+			if (x % 10 != cifre)
+				return false;
+			x /= 10;
+		}
+
+		return true;
+	}
+}
+
+
+int isSuma(int x, int y)
+{
+		int suma = 0;
+	while (x>0)
+	{
+		suma += x % 10;
+		x /= 10;
+	}
+	return suma;
+}
