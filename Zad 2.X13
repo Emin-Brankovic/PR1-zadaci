@@ -1,0 +1,31 @@
+using namespace std;
+bool ifCifreJednake(int x);
+
+void main()
+{
+	int n;
+	do
+	{
+		cout << "Unesite broj n: ", cin >> n;
+	} while (n<0);
+
+	for (int i = 1; i <=n; i++)
+	{
+		if (ifCifreJednake(i))
+		{
+			cout << i << " ";
+		}
+	}
+}
+
+bool ifCifreJednake(int x)
+{
+	int cifra = x % 10;
+	while (x>0)
+	{
+		if (x % 10 != cifra)
+			return false;
+		x /= 10;
+	}
+	return true;
+}
