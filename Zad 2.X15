@@ -1,0 +1,37 @@
+#include <iostream>
+
+using namespace std;
+bool isSorted(int x);
+
+void main()
+{
+	int broj;
+	do
+	{
+		cout << "Unesi broj: ",cin >> broj;
+	} while (broj<0);
+
+	if (isSorted(broj))
+		cout << "Cifre su sortirane" << endl;
+	else
+	{
+		cout << "Cifre nisu sortirane" << endl;
+	}
+}
+
+bool isSorted(int x)
+{
+
+	int predhodna=x%10; // uzima zadnju cifru odmah
+	while (x > 0)
+	{
+		
+		if (x % 10 > predhodna) // poredi zadnju cifru sa prehodnom
+			return false;
+		
+		predhodna = x % 10; // uzima opet zadnju cifru koja ce biti ista na prvom ponavljanju jer se broj nije /10
+		x /= 10;
+	}
+	
+	return true;
+}
