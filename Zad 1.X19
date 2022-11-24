@@ -1,0 +1,54 @@
+#include <iostream>
+
+using namespace std;
+int getbrojdan(int mjesec, int godina);
+bool isValidan(int d, int m, int g);
+bool prestupna(int x);
+void main()
+{
+	int dd, mm,yy;
+	do
+	{
+		cout << "Unesite dan: ", cin >> dd;
+	} while (dd<1 || dd>31);
+	do
+	{
+		cout << "Unesite mjesec: ", cin >> mm;
+	} while (mm<1 || mm>12);
+	do
+	{
+		cout << "Unesite godinu: ", cin >> yy;
+	} while (yy<1);
+
+	if (isValidan(dd, mm, yy))
+		cout << "Datum je validan" << endl;
+	else
+		cout << "Datum nije validan" << endl;
+}
+
+bool prestupna(int x) {
+	return ((x % 4 == 0) && (x % 100 != 0)) || (x % 400 == 0);
+}
+
+int getbrojdan(int mjesec, int godina)
+{
+	switch (mjesec)
+	{
+	case 2:
+		if (prestupna(godina))
+			return 29;
+		else
+		{
+			return 28;
+		}
+
+	case 1:case 3:case 5:case 7:case 8:case 10:case 12:
+		return 31;
+	default:
+		return 30;
+	}
+}
+
+bool isValidan(int d, int m, int g) {
+	return d <= getbrojdan(m, g);
+}
