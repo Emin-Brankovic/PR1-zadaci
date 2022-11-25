@@ -1,0 +1,62 @@
+#include <iostream>
+
+using namespace std;
+int funkcija(int x, int d, int p);
+int getDigits(int x);
+
+void main()
+{
+	int x, p, d;
+	do
+	{
+		cout << "Unesite broj: ", cin >> x;
+	} while (x<0);
+	do
+	{
+		cout << "Unesite cifru zamjene: ", cin >> d;
+	} while (d < 0 || d>9);
+	do
+	{
+		cout << "Unesite poziciju: ", cin >> p;
+	} while (p < 0);
+
+	cout << funkcija(x, d, p) << endl;
+	
+}
+
+int getDigits(int x)
+{
+	int brojac = 0;
+	while (x>0)
+	{
+		x /= 10;
+		brojac++;
+	}
+	return brojac;
+}
+
+int funkcija(int x, int d, int p)
+{
+	int br_cifre = getDigits(x);
+	if (p > br_cifre)
+	{
+		return x;
+	}
+	int cifre = 0; // spremaju se cifre od prve do zadnje
+	int izmjena=0; // sprema se novi broj sa izmjenom
+	for (int i = 1; i <= br_cifre; i++)
+	{
+		int k = br_cifre - i; // koeficijent koji dijeli x kako bi prve cifre uzimao
+		cifre = x / pow(10, k);
+		if (i == p) // provjerava jel broj iteracije jednak poziciji
+		{
+			int nez = cifre % 10; // uzima cifru za zamjneu
+			cifre = (cifre - nez) + d; // izvrsi zamjenu
+		}
+		int zadnja = cifre % 10; // uzima se opet zadnja cifra kako bi se spremio novi broj sa izmjenom
+		
+		izmjena = 10 * izmjena + zadnja; // novi broj sa izmjenom
+		
+	}
+	return izmjena;
+}
