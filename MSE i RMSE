@@ -1,0 +1,30 @@
+#include <iostream>
+
+using namespace std;
+float MSE(float v1[], float v2[], int n);
+float RMSE(float mse);
+
+void main()
+{
+	const int size = 5;
+	float v1[size] = { 1.0,2.0,3.0,4.0,5.0 };
+	float v2[size] = { 6.0,7.0,8.0,9.0,10.0 };
+	cout << MSE(v1, v2, size) << endl;
+	cout << RMSE(MSE(v1, v2, size));
+}
+
+float MSE(float v1[], float v2[], int n)
+{
+	float suma = 0;
+	for (int i = 0; i < n; i++)
+	{
+		suma += pow(v1[i] - v2[i], 2);
+	}
+	return suma / n;
+}
+
+float RMSE (float mse)
+{
+	return sqrt(mse);
+	
+}
