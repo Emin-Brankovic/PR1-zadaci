@@ -1,0 +1,55 @@
+#include <iostream>
+bool isUpper(char c);
+bool isLower(char c);
+bool isSlovo(char c);
+bool isSuglasnik(char c);
+
+
+using namespace std;
+
+void main()
+{
+	char slovo;
+	do
+	{
+		cout << "Unesite suglasnik: ", cin >> slovo;
+	} while (!isSuglasnik(slovo));
+	char prethodno = slovo - 1;
+	char sljedece = slovo + 1;
+	if (slovo == 'z' || slovo == 'Z')
+		 sljedece-= 26;
+	cout << "Susjedna slova su: " <<prethodno  << " i " << sljedece << endl;
+}
+
+bool isUpper(char c)
+{
+	return c >= 'A' && c <= 'Z';
+}
+
+bool isLower(char c)
+{
+	return c >= 'a' && c <= 'z';
+
+}
+
+bool isSlovo(char c)
+{
+	return isUpper(c) || isLower(c);
+}
+
+bool isSuglasnik(char c)
+{
+	
+	switch (c)
+	{
+	case 'A':case'E':case'I':case'O':case'U':
+		return false;
+		
+	case'a':case'e':case'i':case'o':case'u':
+		return false;
+		
+	default:
+		return true;
+	}
+}
+
