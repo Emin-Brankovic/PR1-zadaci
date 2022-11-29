@@ -1,0 +1,29 @@
+#include <iostream>
+
+using namespace std;
+int getBnumber(int a);
+
+void main()
+{
+	int a;
+	do
+	{
+		cout << "Unijeti broj A: ", cin >> a;
+	} while (a<100000);
+	cout << "Razlika izmedju broja A i broja B je: " << a - getBnumber(a) << endl;
+}
+
+int getBnumber(int a)
+{
+		int b = 0;
+	while(a>0)
+	{
+		int cifre_a = a % 10;
+		if (cifre_a % 2 != 0)
+		{
+			b = b * 10 + cifre_a;
+		}
+		a /= 10;
+	} 
+	return b;
+}
