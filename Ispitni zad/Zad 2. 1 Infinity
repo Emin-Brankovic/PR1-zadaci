@@ -1,0 +1,36 @@
+#include <iostream>
+
+using namespace std;
+int generisanjeBacanja();
+
+void main()
+{
+	srand(time(0)); // generise seed koji je nasumican zbog time(0) za rand funckiju 
+	cout << "Tri ista broja dobila su se dva puta uzastopno nakon " << generisanjeBacanja() << " bacanja" << endl;
+}
+
+int generisanjeBacanja()
+{
+	int brojac = 0;
+	int uzastopno = 0;
+	
+	do
+	{
+		int kockica1 = rand() % 6 + 1; // ispise random broj 
+		int kockica2 = rand() % 6 + 1;
+		int kockica3 = rand() % 6 + 1;
+		if (kockica1 == kockica2 && kockica2== kockica3)
+		{
+			uzastopno++;
+		}
+		else
+		{
+			uzastopno = 0;
+			
+		}
+
+		brojac++;
+	} while (uzastopno != 2);
+	return brojac;
+}
+
