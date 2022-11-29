@@ -1,0 +1,37 @@
+#include <iostream>
+
+using namespace std;
+int PanreuPet(int n);
+
+void main()
+{
+	int n;
+	do
+	{
+	cout << "Unijeti broj n: ", cin >> n;
+
+	} while (n<0);
+	cout << n-PanreuPet(n) << endl;
+}
+
+int PanreuPet(int n)
+{
+	int novi_broj = 0;
+	int brojac = 0;
+	while (n>0)
+	{
+		int cifre_n = n % 10;
+		if (cifre_n % 2 == 0)
+		{
+			cifre_n = 5;
+			novi_broj = novi_broj + cifre_n*pow(10,brojac);
+		}
+		else
+		{
+			novi_broj = novi_broj + cifre_n * pow (10, brojac);
+		}
+		n /= 10;
+		brojac++;
+	}
+	return novi_broj;
+}
