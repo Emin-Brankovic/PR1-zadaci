@@ -1,0 +1,32 @@
+#include <iostream>
+
+using namespace std;
+void ObrnutiParni(int& n);
+
+void main()
+{
+	int n;
+	do
+	{
+		cout << "Unesite broj N: ", cin >> n;
+	} while (n<50 || n>5000000);
+	cout << "Novi broj je: ";
+	ObrnutiParni(n);
+	
+}
+
+void ObrnutiParni(int& n)
+{
+	int novi = 0;
+	while (n>0)
+	{
+		int zadnja = n % 10;
+		if (zadnja % 2 == 0)
+		{
+			novi = novi * 10 + zadnja;
+		}
+		n /= 10;
+	}
+	n = novi;
+
+}
