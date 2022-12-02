@@ -1,0 +1,22 @@
+////Napisati program kojim će se izračunati 20 uzastopnih vrijednosti brzine i pređenog puta objekta u slobodnom padu u razmaku od po 3 sec.
+//Prilikom računanja potrebno je i ispisati na ekran uzastopno brzinu i pređeni put zajedno za svaki period od 3sec.Obratiti pažnju da se koriste ispravni tipovi podataka.
+//Formula za brzinu slobodnog pada je : v = g * t; g = 9.81 Formula za pređeni put pri slobodnom padu je : s = (g / 2) * pow(t, 2)
+
+#include <iostream>
+
+using namespace std;
+
+void  main()
+{
+	const float g = 9.81;
+	int t = 3;
+	for (int i = 0; i < 20; i++)
+	{
+		float v= g * t;
+		double s = (g / 2) * pow(t, 2);
+		cout << "Situacija u " << t << "-oj sekundi je: " << endl;
+		cout << "Brzina: " << v << endl;
+		cout << "Predjeni put: " << s << endl;
+		t += 3;
+	}
+}
