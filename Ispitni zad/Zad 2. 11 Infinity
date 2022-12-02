@@ -1,0 +1,35 @@
+//Napisati program koji rješava sljedeći problem.
+//Date su firma A, B i C sa godišnjim prihodima : A - prihod 10M eura B - prihod 7M eura C - prihod 5M eura sa sljedećim stabilnim fiksnim godišnjim rastom prihoda za koji pretpostavljamo da se neće mijenjati A - 2.05 % B - 2.80 % C - 4.30 % Potrebno je pronaći koja firma će prva prestići firmu A u godišnjem prihodu i za koliko godina će se to desit.
+//
+//Također potrebno je ispisati koliko će sve tri firme imati godišnji prihod u toj godini.
+//
+
+#include <iostream>
+
+using namespace std;
+
+void main()
+{
+	float A = 10, B = 7, C = 5;
+	const float rast_A = 2.05, rast_B = 2.80, rast_C = 4.30;
+	int brojac = 0;
+	do
+	{
+		A = A + (A * rast_A / 100.00);
+		B = B + (B * rast_B / 100.00);
+		C = C + (C * rast_C / 100.00);
+
+		brojac++;
+	} while (B<A && C<A);
+	if (B > C)
+	{
+		cout << "Firma B je prva prestigla firmu A u " << brojac << " godini" << " sa prihodom " << B <<"M" << endl;
+	}
+	else
+	{
+		cout << "Firma C je prva prestigla firmu A u " << brojac << " godini" << " sa prihodom " << C<<"M" << endl;
+	}
+	cout << "Godisnji prihod firme A u " << brojac << " godini iznosi " <<  A << " M EURA." << endl;
+	cout << "Godisnji prihod firme B u " << brojac << " godini iznosi " <<  B << " M EURA." << endl;
+	cout << "Godisnji prihod firme C u " <<brojac << " godini iznosi " <<  C << " M EURA." << endl;
+}
