@@ -1,0 +1,37 @@
+// Napraviit program gdje korisnik unosi broj x i eksponent n koji si u rangu 10<x<100 i 2<n<10
+// Napisati funkciju koja ce ispisati zadnje tri cifre broja x^n
+
+#include <iostream>
+
+using namespace std;
+int Zadnje3Cifre(int broj);
+
+void main()
+{
+	int x, n,broj;
+	do
+	{
+		cout << "Unijeti broj od 10 do 100: ", cin >> x;
+	} while (x<=10 || x>=100);
+
+	do
+	{
+		cout << "Unijeti eksponent: ",cin >> n;
+	} while (n<=2 || n>=10);
+	broj = pow(x, n);
+
+	cout << "Zadnje tri cifre broja su: " << Zadnje3Cifre(broj) << endl;
+}
+
+int Zadnje3Cifre(int broj)
+{
+	int zadnje = 0;
+	int novi = 0;
+	for (int i = 0; i < 3; i++)
+	{
+		zadnje=broj % 10;
+		novi = novi + (zadnje * (pow(10, i))); // 4+(0*1)=4; 4+(2*10)=24; 24+(8+100)=824
+		broj /= 10;
+	}
+	return novi;
+}
