@@ -1,0 +1,59 @@
+#include <iostream>
+
+using namespace std;
+bool isDobar(int n);
+void unos(int niz[], int n, int &finalnaDuzina);
+void ispis(int niz[], int );
+int niz[10];
+
+void main()
+{
+	const int size = 10;
+	int n,finalnzaduzina=0;
+	do
+	{
+		cout << "Unijet broj n: ";
+		cin >> n;
+	} while (n<1 || n>10);
+	unos(niz, n,finalnzaduzina);
+	ispis(niz, finalnzaduzina);
+}
+
+bool isDobar(int n)
+{
+	int zadnja;
+	int suma = 0;
+	while (n>0)
+	{
+		int zadnja = n % 10;
+		if (zadnja < suma)
+			return false;
+		suma += zadnja;
+		n /= 10;
+	}
+	return true;
+}
+
+void unos(int niz[], int n,int &finalnaDuzina)
+{
+	int broj, indeks = 0;
+	for (int i = 0; i < n; i++)
+	{
+		cout << "Unijeti " << i + 1 << " clan" << endl;
+		cin >> broj;
+		if (isDobar(broj))
+		{
+			niz[indeks] = broj;
+			indeks++;
+		}
+	}
+	finalnaDuzina = indeks;
+}
+
+void ispis(int niz[], int vel)
+{
+	for (int i = 0; i < vel; i++)
+	{
+		cout << niz[i] << " ";
+	}
+}
