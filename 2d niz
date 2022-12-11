@@ -1,0 +1,66 @@
+#include <iostream>
+
+using namespace std;
+void upis(int m[][3], int size);
+void ispis(int m[][3], int size);
+int sumaGlavne(int m[][3], int size);
+int sumaReda(int[], int size);
+
+void main()
+{
+	const int size = 3;
+	int matrica[size][size],izbor_reda;
+	upis(matrica, size);
+	ispis(matrica, size);
+
+	cout << "Suma glavne dijagonale je: " << sumaGlavne(matrica, size) << endl;
+	do
+	{
+		cout << "Unesite red niza kojem ce se suma izracunati: ", cin >> izbor_reda;
+	} while (izbor_reda<0 || izbor_reda>2);
+	cout << "Suma " << izbor_reda << " reda je: " << sumaReda(matrica[izbor_reda], size) << endl;
+}
+
+int sumaGlavne(int m[][3],int size )
+{
+	int suma = 0;
+	for  (int i = 0; i < size; i++)
+	{
+		suma += m[i][i];
+	}
+	return suma;
+}
+
+void upis(int m[][3], int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		for (int j = 0; j < size; j++)
+		{
+			cin >> m[i][j];
+		}
+		cout << endl;
+	}
+}
+
+void ispis(int m[][3], int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		for (int j = 0; j < size; j++)
+		{
+			cout<< " " << m[i][j];
+		}
+		cout << endl;
+	}
+}
+
+int sumaReda(int niz[], int size)
+{
+	int suma = 0;
+	for (int i = 0; i < size; i++)
+	{
+		suma += niz[i];
+	}
+	return suma;
+}
