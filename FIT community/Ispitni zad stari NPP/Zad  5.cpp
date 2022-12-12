@@ -1,7 +1,7 @@
-Napišite program u kojem ćete deklarirati niz od 7 cijelih brojeva. Uz pomoć funkcije:
-void unos (int [], int); omogućite unos elemenata u niz;
-float prosjecna(int [], int); izračunati prosječnu vrijednost elemenata niza;
-bool opadajuci (int [], int); provjeriti jesu li elementi niza poredani u opadajuæem poretku (n1 > n2 > n3 > n4 > n5 > n6 > n7);
+//Napišite program u kojem ćete deklarirati niz od 7 cijelih brojeva. Uz pomoć funkcije:
+//void unos (int [], int); omogućite unos elemenata u niz;
+//float prosjecna(int [], int); izračunati prosječnu vrijednost elemenata niza;
+//bool opadajuci (int [], int); provjeriti jesu li elementi niza poredani u opadajuæem poretku (n1 > n2 > n3 > n4 > n5 > n6 > n7);
 
 #include <iostream>
 
