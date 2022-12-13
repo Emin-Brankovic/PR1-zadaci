@@ -1,3 +1,11 @@
+Napišite program u kojem ćete :
+
+//omoguæiti unos niza od 5 isključivo malih slova pomoæu funkcije: void unos (char [], int);
+//definirati i upotrijebiti funkciju void promijeni(char [], int [], int);
+//koja će unesene karaktere (slova) promijeniti u odgovarajuće cijele brojeve (prema ASCII kodnoj shemi) i smjestiti ih u zaseban niz.
+//definirati i upotrijebiti funkciju void binarni(int [], int); u kojoj će niz prethodno dobivenih cijelih brojeva pretvoriti u ekvivalentne binarne brojeve (binarne brojeve smjestiti u isti niz u kojem su bile ASCII vrijednosti). 
+//Upotrijebite funkciju bin (funkciju ne treba prepisivati) čija je zadaća da pretvara jedan cijeli broj u binarni i izgleda ovako:
+
 #include <iostream>
 
 using namespace std; 
