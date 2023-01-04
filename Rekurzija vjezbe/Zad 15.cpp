@@ -60,6 +60,7 @@ void ispis(int matrica[][4], int i, int j)
 	ispis(matrica, i, j + 1);
 }
 
+// Funckija koja sumira clanove jednog reda i stavlja ih u drugi niz
 void SumaReda(int matrica[][4],int red[4])
 {
 	int suma = 0;
@@ -71,7 +72,7 @@ void SumaReda(int matrica[][4],int red[4])
 		suma = 0;
 	}
 }
-
+// Funckija koja sumira clanove jedne kolone i stavlja ih u drugi niz
 void SumaKolona(int matrica[][4],int kolona[4])
 {
 	int sum = 0;
@@ -96,6 +97,7 @@ int SumaSporedne(int matrica[][4], int i, int sum)
 	return SumaSporedne(matrica, i + 1, sum += matrica[i][4 - i - 1]);
 }
 
+//Provjerava da li je magicna kocka tako sto poredi prvo sumu svakog reda i kolone matrice pa poslije poredi sume dijegonala i sumu dijagonale jedne sa sumom jednog reda matrice
 bool Provjera(int red[4], int kolona[4],int matrica[][4])
 {
 	int glavna = SumaGlavne(matrica, 0, 0);
