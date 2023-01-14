@@ -8,12 +8,7 @@ Radi lakšeg testiranja programa obavezno u funkciji unosa podataka omogućiti d
 godRodjenja: 1980 + rand() % ((2000 + 1) - 1980) // Generiše brojeve u rangu 1980 - 2000
 brojIgraca: rand() % 30 + 1
 golovi: rand() % 5
-
-
 */
-
-
-
 
 #include <iostream>
 #include <time.h>
