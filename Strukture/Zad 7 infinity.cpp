@@ -12,7 +12,7 @@ Potrebno je napisati funkciju koja će računati prosječnu visinu svih figura k
 (Funkcija treba vratiti pokazivač na memorijsku lokaciju u kojoj je upisana ta vrijednost.)*/
 
 #include <iostream>
-
+#include <time.h>
 using namespace std;
 
 struct figura
@@ -40,6 +40,7 @@ float prosjekVisina(figura** matrica, int red, int kol);
 //void ispisVisina(figura** matrica, int red, int kol);
 void main()
 {
+	srand(time(0));
 	int red, kol;
 	cout << "Unijeti broj redova: ", cin >> red;
 	do
